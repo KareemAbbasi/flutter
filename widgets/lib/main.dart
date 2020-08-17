@@ -8,10 +8,12 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //creates a container of height 100 with a padding on the right and left sides.
     return Container(
       height: 100.0,
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       color: Colors.green,
+      //The contents of the container are in a Row widget.
       child: Row(
         children: <Widget>[
           IconButton(
@@ -19,6 +21,8 @@ class MyAppBar extends StatelessWidget {
             tooltip: 'Navigation Menu',
             onPressed: null,
           ),
+
+          //The things in the Expanded get expanded to fill as much space as possible.
           Expanded(
             child: title,
           ),
@@ -37,6 +41,7 @@ class MyScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      //organizes the contents in a Column.
       child: Column(
         children: <Widget>[
           MyAppBar(
@@ -46,6 +51,7 @@ class MyScaffold extends StatelessWidget {
             ),
           ),
           Expanded(
+            //The center widget centers its contents.
             child: Center(
               child: Text('Hello, world!'),
             ),
